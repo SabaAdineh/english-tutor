@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معلم هوش مصنوعی انگلیسی - تصحیح گرامر</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1> معلم هوش مصنوعی انگلیسی</h1>
+            <p>اصلاحات فوری گرامر و یادگیری انگلیسی </p>
+        </header>
+
+        <!-- Main Input Section -->
+        <div class="input-section">
+            <div class="input-group">
+                <label for="userInput">جمله انگلیسی خود را تایپ کنید:</label>
+                <textarea 
+                    id="userInput" 
+                    placeholder="مثال‌ها: 
+• 'He go to school everyday'
+• 'I is very happy today'
+• 'She dont like apples'
+• 'We was at the park yesterday'"
+                    rows="4"
+                ></textarea>
+            </div>
+
+            <div class="controls">
+                <select id="difficulty">
+                    <option value="easy">آسان</option>
+                    <option value="intermediate" selected>متوسط</option>
+                    <option value="advanced">پیشرفته</option>
+                </select>
+                
+                <button id="checkBtn" onclick="checkGrammar()">
+                    <span class="btn-text">بررسی گرامر</span>
+                    <span class="btn-loading" style="display: none;">⏳ در حال بررسی...</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Loading Indicator -->
+        <div id="loading" class="loading" style="display: none;">
+            <div class="spinner"></div>
+            <p>هوش مصنوعی در حال تحلیل جمله شماست...</p>
+        </div>
+
+        <!-- Results Section -->
+        <div id="result" class="result" style="display: none;">
+            <!-- Results will appear here -->
+        </div>
+
+        <!-- Examples Section -->
+        <div class="examples">
+            <h3>💡 این مثال‌ها را امتحان کنید:</h3>
+            <div class="example-buttons">
+                <button class="example-btn" onclick="fillExample('He go to school everyday')">He go to school everyday</button>
+                <button class="example-btn" onclick="fillExample('I is very happy')">I is very happy</button>
+                <button class="example-btn" onclick="fillExample('She dont like apples')">She dont like apples</button>
+                <button class="example-btn" onclick="fillExample('We was at the park')">We was at the park</button>
+            </div>
+        </div>
+
+        <!-- Status -->
+        <div class="status">
+            <div id="connectionStatus" class="status-connected">
+                ✅ متصل به بک‌اند هوش مصنوعی
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
